@@ -20,6 +20,7 @@ public class CustomerController {
         }
 
         @PostMapping("/create")
+        @ResponseStatus(HttpStatus.CREATED)  //You can use status code like this.
         ResponseEntity<CustomerResponse> createCustomer(@RequestBody CustomerRequest customerRequest){
             CustomerResponse customer = customerService.createCustomer(customerRequest);
             return new ResponseEntity<>(customer, HttpStatus.CREATED);
