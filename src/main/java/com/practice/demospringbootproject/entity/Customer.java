@@ -1,12 +1,20 @@
 package com.practice.demospringbootproject.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+
+/**
+ * Adding indexing for performance optimization.
+ */
+@Table(
+        name = "customer",
+        indexes = {
+                @Index(name = "idx_cust_email",
+                columnList = "customer_email")
+        }
+)
 @Setter
 @Getter
 @AllArgsConstructor
