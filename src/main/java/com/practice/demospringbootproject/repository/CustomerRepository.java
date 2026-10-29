@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     Optional<Customer> findByIdAndIsDeletedFalse(Long id);
-    List<Customer> findByIsDeletedFalse();
+    List<Customer> findByIdDeletedFalse();
 }

@@ -31,7 +31,7 @@ public class CustomerServiceImple implements CustomerService {
         /**
           better approch is to use findByisDeletedFalse() instead of findAll() because findAll() will return all the customers including the deleted ones.
          */
-        return customerRepository.findByIsDeletedFalse()
+        return customerRepository.findByIdDeletedFalse()
                 .stream().map(CustomerMapper::toResponse).toList();
     }
 
